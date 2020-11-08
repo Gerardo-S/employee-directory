@@ -8,8 +8,11 @@ import EmployeeTable from "./EmployeeTable";
 
 function EmployeeContainer() {
     const [error, setError] = useState("");
-    const [characterData, setCharacterData] = useState()
+    const [characterData, setCharacterData] = useState(
+       
+    [])
     useEffect(() => {
+        
         API.getCharacters().then((res) => {
             if (res.data.length === 0) {
                 throw new Error("No results found.");
@@ -23,9 +26,9 @@ function EmployeeContainer() {
         })
             .catch((err) => setError(err.message));
 
-
-
     }, []);
+
+  
     return (
         <Container>
             <Row>

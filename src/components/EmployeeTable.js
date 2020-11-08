@@ -2,9 +2,19 @@ import React from 'react';
 
 function EmployeeTable(props) {
     const { characterData } = props;
-    console.log(characterData);
+    const rowList = characterData
+        .map((character) => (
+            <tr key={character._id}>
+                <td >{character.name}</td>
+                <td >{character.house}</td>
+                <td >{character.role}</td>
+                <td >{character.school}</td>
+                <td >{character.species}</td>
+            </tr>
+
+        ));
     return (
-        <table className="table table-striped">
+        <table className="table table-striped table-responsive">
             <thead className="text-center">
                 <tr>
                     <th scope="col">Name</th>
@@ -15,28 +25,7 @@ function EmployeeTable(props) {
                 </tr>
             </thead>
             <tbody className="text-center">
-                <tr>
-                    <td>Hannah Abbot</td>
-                    <td>Hufflepuff</td>
-                    <td>Student</td>
-                    <td>Hogwarts</td>
-                    <td >Human</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>name@Email.com</td>
-                    <td>@twitter</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>name@Email.com</td>
-                    <td>@twitter</td>
-                </tr>
-
+                {rowList}
             </tbody>
         </table>
     )
