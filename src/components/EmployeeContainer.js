@@ -35,7 +35,7 @@ function EmployeeContainer() {
     const filteredCharacterName = characterData.filter((character) => {
         return character.name.toUpperCase().includes(search.toUpperCase());
       });
-      console.log(filteredCharacterName);
+     
       return (
           <Container>
             <Row>
