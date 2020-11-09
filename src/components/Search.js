@@ -1,17 +1,19 @@
 import React from "react";
 
 function search(props) {
+    console.log(props.value);
     return (
         <form >
             <div className="form-group ">
                 <label htmlFor="search">Search For Characters:</label>
                 <input
-                    value={props.value}
+                    placeholder="Search For Character"
                     name="search"
                     type="text"
                     className="form-control"
-                    placeholder="Search For Character"
                     id="search"
+                    value={props.value}
+                    onChange={props.onSearchChange}
                 />
 
             </div>

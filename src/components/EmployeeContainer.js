@@ -8,9 +8,13 @@ import EmployeeTable from "./EmployeeTable";
 
 function EmployeeContainer() {
     const [error, setError] = useState("");
-    const [characterData, setCharacterData] = useState(
-       
-    [])
+    const [characterData, setCharacterData] = useState([]);
+    const [search, setSearch]= useState(""); 
+
+    
+    const handleSearchChange = (event) => {
+        setSearch(event.target.value);
+      };
     useEffect(() => {
         
         API.getCharacters().then((res) => {
@@ -24,15 +28,21 @@ function EmployeeContainer() {
             setCharacterData(data);
 
         })
-            .catch((err) => setError(err.message));
+            .catch((err) => setError(error.message));
 
     }, []);
 
-  
-    return (
-        <Container>
+    useEffect(() => {
+        console.log(search);
+        const filteredCharacterName = characterData.filter((character) => {
+            return character.name.toUpperCase().includes(search.toUpperCase());
+          });
+          console.log(filteredCharacterName);
+      }, [search]);
+      return (
+          <Container>
             <Row>
-                <Search />
+                <Search value={search} onSearchChange={handleSearchChange}/>
             </Row>
             <br />
             <EmployeeTable characterData={characterData} />
