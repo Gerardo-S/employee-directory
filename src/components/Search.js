@@ -1,7 +1,7 @@
 import React from "react";
 
 function search(props) {
-    console.log(props.value);
+    
     return (
         <form >
             <div className="form-group ">

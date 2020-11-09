@@ -32,20 +32,17 @@ function EmployeeContainer() {
 
     }, []);
 
-    useEffect(() => {
-        console.log(search);
-        const filteredCharacterName = characterData.filter((character) => {
-            return character.name.toUpperCase().includes(search.toUpperCase());
-          });
-          console.log(filteredCharacterName);
-      }, [search]);
+    const filteredCharacterName = characterData.filter((character) => {
+        return character.name.toUpperCase().includes(search.toUpperCase());
+      });
+      console.log(filteredCharacterName);
       return (
           <Container>
             <Row>
                 <Search value={search} onSearchChange={handleSearchChange}/>
             </Row>
             <br />
-            <EmployeeTable characterData={characterData} />
+            <EmployeeTable characterData={filteredCharacterName} />
         </Container>
     );
 };
