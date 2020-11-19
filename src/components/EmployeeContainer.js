@@ -10,6 +10,7 @@ function EmployeeContainer() {
     const [error, setError] = useState("");
     const [characterData, setCharacterData] = useState([]);
     const [search, setSearch]= useState(""); 
+    
 
     
     const handleSearchChange = (event) => {

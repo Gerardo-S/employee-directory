@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function EmployeeTable(props) {
     const { characterData } = props;
-    // const [color, setColor] = useState();
+    
     const [currentSort, setSort] = useState("default");
 
     const sortTypes = {
@@ -33,12 +33,12 @@ function EmployeeTable(props) {
         return comparison;
       }
     const handleSortChange = () => {
-        console.log(currentSort);
+       
         let nextSort;
         if(currentSort === "down"){
             nextSort = "up";
             characterData.sort(compare);
-            console.log(characterData);
+           
         }
         else if (currentSort === "up"){
             characterData.reverse();

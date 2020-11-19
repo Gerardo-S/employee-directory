@@ -11,7 +11,7 @@ Before launching app ensure package dependencies below have been installed.
     "bootstrap"
     "axios"
 ````
-Once dependencies have been installed using node open integrated terminal for current directory. Use  ``npm install`` to launch application. Upon page load user will be displayed a table of employees. User may use search form to filer current employees.
+Once dependencies have been installed using node open integrated terminal for current directory. Use  ``npm install`` to launch application. Upon page load user will be displayed a table of employees. User may use search form to filter current employees.
 
 ## Demo of Application
 <img src="public\images\Search Functionality.gif" alt="Demo of Search Functionality">
